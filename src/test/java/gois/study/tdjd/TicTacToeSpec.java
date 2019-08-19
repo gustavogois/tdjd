@@ -20,7 +20,12 @@ public class TicTacToeSpec {
     @Test
     public void whenXOutsideBoardThenRuntimeException() {
         exception.expect(RuntimeException.class);
-        // At this moment, we have to think about the design...
         ticTacToe.play(5, 2);
+    }
+
+    @Test
+    public void whenYOutsideBoardThenRuntimeException() {
+        exception.expect(RuntimeException.class);
+        ticTacToe.play(2, 5);
     }
 }
