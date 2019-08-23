@@ -14,13 +14,13 @@ public class TicTacToe {
             {BLANK, BLANK, BLANK}
     };
 
-    public void play(int x, int y) {
+    public String play(int x, int y) {
 
         checkAxis(x);
         checkAxis(y);
         setBox(x, y);
         lastPlayer = nextPlayer();
-
+        return "No winner";
     }
 
     private void setBox(int x, int y) {
