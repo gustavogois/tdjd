@@ -2,12 +2,16 @@ package gois.study.tdjd;
 
 public class TicTacToe {
 
-    private char lastPlayer = '\0';
+    public static final char BLANK = '\0';
+    public static final char PLAYER_X = 'X';
+    public static final char PLAYER_O = 'O';
+
+    private char lastPlayer = BLANK;
 
     private Character[][] board = {
-            {'\0', '\0', '\0'},
-            {'\0', '\0', '\0'},
-            {'\0', '\0', '\0'}
+            {BLANK, BLANK, BLANK},
+            {BLANK, BLANK, BLANK},
+            {BLANK, BLANK, BLANK}
     };
 
     public void play(int x, int y) {
@@ -20,10 +24,10 @@ public class TicTacToe {
     }
 
     private void setBox(int x, int y) {
-        if (board[x-1][y-1] != '\0') {
+        if (board[x-1][y-1] != BLANK) {
             throw new RuntimeException("Box is occupied");
         } else {
-            board[x-1][y-1] = 'X';
+            board[x-1][y-1] = PLAYER_X;
         }
     }
 
@@ -34,6 +38,6 @@ public class TicTacToe {
     }
 
     public char nextPlayer() {
-        return lastPlayer == 'X' ? 'O' : 'X';
+        return lastPlayer == PLAYER_X ? PLAYER_O : PLAYER_X;
     }
 }
