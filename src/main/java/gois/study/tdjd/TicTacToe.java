@@ -29,4 +29,8 @@ public class TicTacToe {
             throw new RuntimeException("Axis is outside board");
         }
     }
+
+    public char nextPlayer() {
+        return 'X';
+    }
 }
