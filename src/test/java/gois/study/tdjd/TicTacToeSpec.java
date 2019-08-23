@@ -39,7 +39,7 @@ public class TicTacToeSpec {
     }
 
     @Test
-    public void givenFirstTurnWhenNextPlayerThenX {
+    public void givenFirstTurnWhenNextPlayerThenX() {
         assertEquals('X', ticTacToe.nextPlayer());
     }
 }
