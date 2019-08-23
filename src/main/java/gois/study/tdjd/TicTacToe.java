@@ -2,6 +2,8 @@ package gois.study.tdjd;
 
 public class TicTacToe {
 
+    private char lastPlayer = '\0';
+
     private Character[][] board = {
             {'\0', '\0', '\0'},
             {'\0', '\0', '\0'},
@@ -13,6 +15,7 @@ public class TicTacToe {
         checkAxis(x);
         checkAxis(y);
         setBox(x, y);
+        lastPlayer = nextPlayer();
 
     }
 
@@ -31,6 +34,6 @@ public class TicTacToe {
     }
 
     public char nextPlayer() {
-        return 'X';
+        return lastPlayer == 'X' ? 'O' : 'X';
     }
 }
