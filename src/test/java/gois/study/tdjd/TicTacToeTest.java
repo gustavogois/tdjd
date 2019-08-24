@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
-public class TicTacToeSpec {
+public class TicTacToeTest {
 
     @Rule
     public ExpectedException exception = ExpectedException.none();
