@@ -10,5 +10,4 @@ Based on the book [Test-Driven Java Development](https://www.amazon.com/Test-Dri
 - Tic-Tac-Toe's requirements
 - Developing Tic-Tac-Toe
 - Code coverage
-- Exercises
  
