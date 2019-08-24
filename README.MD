@@ -35,7 +35,7 @@ most often accomplished through division into small units. In Java, units are me
 feedback loop they provide is the fastest so we spend most of our time thinking and working on them. As a counterpart 
 to implementation methods, unit tests should constitute by far the biggest percentage of all tests.
 
-#### What is unit testing?
+##### What is unit testing?
 
 Unit testing is a practice that forces us to test small, individual, and isolated units of code. They are usually 
 methods, even though in some cases classes or even whole applications can be considered to be units, as well. In order 
@@ -45,7 +45,7 @@ covered in Chapter 6, Mocking – Removing External Dependencies). If unit tests
 boundaries of that unit, then they become integration tests. As such, it becomes less clear what is under the tests. 
 In case of a failure, the scope of a problem suddenly increases and finding the cause becomes more tedious.
 
-#### Why unit testing?
+##### Why unit testing?
 
 A common question, especially within organizations that rely heavily on manual testing, is Why should we use unit 
 instead of functional and integration testing? This question in itself is flawed. Unit testing does not replace other 
@@ -55,7 +55,7 @@ reduced time to write and run them, they tend to detect problems much sooner. Th
 cheaper it is to fix them. A bug that was detected minutes after it was created is much easier to fix than if that 
 same bug was found days, weeks, or even months after it was made.
 
-#### Code Refactoring
+##### Code Refactoring
 
 Typically, we approach refactoring by applying a set of small changes without modifying intended behavior. Reducing 
 the scope of refactoring changes allows us continuously to confirm that those changes did not break any existing 
@@ -66,7 +66,7 @@ there are no automated tests to confirm that the application still behaves as ex
 used to provide the code coverage required for refactoring, in most cases only unit tests can provide the required 
 level of details.
 
-#### Why not use unit tests exclusively?
+##### Why not use unit tests exclusively?
 
 At this moment, you might be wondering whether unit testing could provide a solution for all your testing needs. 
 Unfortunately, that is not the case. While unit tests usually cover the biggest percentage of your testing needs, 
@@ -105,7 +105,7 @@ with unit tests, we could be satisfied with a single integration test that check
 correct method on the backend. If it is, details are irrelevant from an integration point of view since we know that 
 all cases are already covered on the unit level.
 
-#### Unit testing with TDD
+##### Unit testing with TDD
 
 What is the difference in the way we write unit tests in the context of TDD? The major differentiator is in when. While 
 traditionally unit tests are written after the implementation code is done, in TDD we write tests before—the order of 
@@ -129,3 +129,23 @@ TDD forces us to think through our requirements and design, write clean code tha
 requirements, and refactor safely and often. On top of all that, we end up with high test code coverage that is used 
 to regression-test all our code whenever some change is introduced. Unit testing without TDD gives us only tests and, 
 often, with doubtful quality.
+
+#### Remote-controlled ship requirements
+
+We'll work on a variation of a well-known kata called Mars Rover, originally published in Dallas Hack Club 
+(http://dallashackclub.com/rover).
+
+Imagine that a naval ship is placed somewhere on Earth's seas. Since this is the 21st century, we can control that 
+ship remotely.
+
+**Our job will be to create a program that can move the ship around the seas**
+
+Since this is a TDD book and the subject of this chapter is unit tests, we'll develop an application using a TDD 
+approach with the focus on unit tests. In the previous chapter, Chapter 3, Red-Green-Refactor – From Failure Through 
+Success until Perfection, you learned the theory and had practical experience with the Red-Green-Refactor procedure. 
+We'll build on top of that and try to learn how to employ unit testing effectively. Specifically, we'll try to 
+concentrate on a unit we're developing and learn how to isolate and ignore dependencies that a unit might use. Not 
+only that, but we'll try to concentrate on one requirement at a time. For this reason, you were presented only with 
+high-level requirements; we should be able to move the remote-controlled ship, located somewhere on the planet, around.
+
+To make things easier, all the supporting classes have been already made and tested. This will allow us to concentrate on the main task at hand and, at the same time, keep this exercise concise. 
