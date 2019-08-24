@@ -32,7 +32,8 @@ public class TicTacToe {
                 return true;
             }
         }
-        return board[0][0] + board[1][1] + board[2][2] == playerTotal ? true : false;
+        return (board[0][0] + board[1][1] + board[2][2] == playerTotal) ||
+                (board[0][2] + board[1][1] + board[2][0] == playerTotal) ? true : false;
     }
 
     private void setBox(int x, int y, char lastPlayer) {
