@@ -5,6 +5,7 @@ public class TicTacToe {
     public static final char BLANK = '\0';
     public static final char PLAYER_X = 'X';
     public static final char PLAYER_O = 'O';
+    private static final int SIZE = 3;
 
     private char lastPlayer = BLANK;
 
@@ -20,14 +21,16 @@ public class TicTacToe {
         checkAxis(y);
         lastPlayer = nextPlayer();
         setBox(x, y, lastPlayer);
-        for (int index = 0; index < 3; index++) {
-            if (board[0][index] == lastPlayer
-                    && board[1][index] == lastPlayer
-                    && board[2][index] == lastPlayer) {
-                return lastPlayer + " is the winner";
+        return isWin() ? lastPlayer + " is the winner" : "No winner";
+    }
+
+    private boolean isWin() {
+        for (int i = 0; i < SIZE; i++) {
+            if (board[0][i] + board[1][i] + board[2][i] == (lastPlayer * SIZE)) {
+                return true;
             }
         }
-        return "No winner";
+        return false;
     }
 
     private void setBox(int x, int y, char lastPlayer) {
