@@ -1,13 +1,16 @@
 package gois.study.tdjd.model;
 
+import org.springframework.data.annotation.Id;
+
 public class TicTacToe {
 
-    private int turn;
+    @Id
+    private Integer turn;
     private int x;
     private int y;
     private char player;
 
-    public int getTurn() {
+    public Integer getTurn() {
         return turn;
     }
 

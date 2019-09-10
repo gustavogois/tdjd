@@ -9,7 +9,7 @@ public class TicTacToeTest {
 
     private TicTacToe bean;
 
-    private final int turn = 17;
+    private final Integer turn = 17;
     private final int x = 2;
     private final int y = 3;
     private final char player = 'X';
