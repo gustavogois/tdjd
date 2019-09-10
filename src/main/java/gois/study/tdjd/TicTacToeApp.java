@@ -1,6 +1,6 @@
 package gois.study.tdjd;
 
-public class TicTacToe {
+public class TicTacToeApp {
 
     public static final char BLANK = '\0';
     public static final char PLAYER_X = 'X';
