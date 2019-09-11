@@ -11,7 +11,8 @@ public class TicTacToeBusiness {
         this.repository = repository;
     }
 
-    public void saveMove(TicTacToe bean) {
+    public boolean saveMove(TicTacToe bean) {
         repository.save(bean);
+        return true;
     }
 }
