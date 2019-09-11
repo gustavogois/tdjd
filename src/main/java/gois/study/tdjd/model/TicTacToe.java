@@ -1,13 +1,15 @@
 package gois.study.tdjd.model;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "tictactoe")
 public class TicTacToe {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private Integer turn;
     private int x;
     private int y;
