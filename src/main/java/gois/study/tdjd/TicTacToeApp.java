@@ -11,6 +11,7 @@ public class TicTacToeApp {
     private static final int SIZE = 3;
 
     private char lastPlayer = BLANK;
+    private int turn = 0;
     private TicTacToeBusiness business;
 
     private Character[][] board = {
@@ -28,7 +29,7 @@ public class TicTacToeApp {
         checkAxis(x);
         checkAxis(y);
         lastPlayer = nextPlayer();
-        setBox(new TicTacToe(1, x, y, lastPlayer));
+        setBox(new TicTacToe(++turn, x, y, lastPlayer));
         if (isWin(x, y)) {
             return lastPlayer + " is the winner";
         } else if (isDraw()) {
