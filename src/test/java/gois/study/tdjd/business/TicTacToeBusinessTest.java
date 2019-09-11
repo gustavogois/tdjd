@@ -5,6 +5,7 @@ import gois.study.tdjd.repository.TicTacToeRepository;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -33,5 +34,16 @@ public class TicTacToeBusinessTest {
     public void whenSaveMoveThenReturnTrue() {
 
         assertTrue(business.saveMove(bean));
+    }
+
+    @Test
+    public void givenExceptionWhenSaveMoveThenReturnFalse() {
+        // Here, we introduce to another Mockito method: doThrow. It acts in a similar way
+        // to doReturn and throws an Exception when set conditions are fulfilled. The specification
+        // will throw the RuntimeException when the save method inside the repository is
+        // invoked. This allows us to assert that our saveMove method returns false when an exception
+        // is thrown.
+        doThrow(new RuntimeException("Bla")).when(repository).save(any(TicTacToe.class));
+        assertFalse(business.saveMove(bean));
     }
 }
