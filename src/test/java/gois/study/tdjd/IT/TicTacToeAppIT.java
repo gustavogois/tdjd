@@ -20,6 +20,8 @@ public class TicTacToeAppIT {
     @Test
     public void givenMySQLIsRunningWhenPlayThenNoException() {
         TicTacToeApp ticTacToe = new TicTacToeApp(business);
+        // The invocation of assertEquals is just as a precaution. The real
+        // objective of this test is to make sure that no Exception is thrown.
         assertEquals(TicTacToeApp.NO_WINNER, ticTacToe.play(1, 1));
     }
 }
