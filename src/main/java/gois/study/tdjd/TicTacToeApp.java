@@ -9,6 +9,7 @@ public class TicTacToeApp {
     public static final char PLAYER_X = 'X';
     public static final char PLAYER_O = 'O';
     private static final int SIZE = 3;
+    public static final String NO_WINNER = "No winner";
 
     private char lastPlayer = BLANK;
     private int turn = 0;
@@ -35,7 +36,7 @@ public class TicTacToeApp {
         } else if (isDraw()) {
             return "The result is draw";
         } else {
-            return "No winner";
+            return NO_WINNER;
         }
     }
 
