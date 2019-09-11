@@ -1,6 +1,7 @@
 package gois.study.tdjd;
 
 import gois.study.tdjd.business.TicTacToeBusiness;
+import gois.study.tdjd.model.TicTacToe;
 
 public class TicTacToeApp {
 
@@ -27,7 +28,7 @@ public class TicTacToeApp {
         checkAxis(x);
         checkAxis(y);
         lastPlayer = nextPlayer();
-        setBox(x, y, lastPlayer);
+        setBox(new TicTacToe(1, x, y, lastPlayer));
         if (isWin(x, y)) {
             return lastPlayer + " is the winner";
         } else if (isDraw()) {
@@ -65,11 +66,12 @@ public class TicTacToeApp {
         return true;
     }
 
-    private void setBox(int x, int y, char lastPlayer) {
-        if (board[x - 1][y - 1] != '\0') {
+    private void setBox(TicTacToe bean) {
+        if (board[bean.getX() - 1][bean.getY() - 1] != '\0') {
             throw new RuntimeException("Box is occupied");
         } else {
-            board[x - 1][y - 1] = lastPlayer;
+            board[bean.getX() - 1][bean.getY() - 1] = lastPlayer;
+            business.saveMove(bean);
         }
     }
 
