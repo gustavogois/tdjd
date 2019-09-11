@@ -71,7 +71,9 @@ public class TicTacToeApp {
             throw new RuntimeException("Box is occupied");
         } else {
             board[bean.getX() - 1][bean.getY() - 1] = lastPlayer;
-            business.saveMove(bean);
+            if(!business.saveMove(bean)) {
+                throw new RuntimeException("Saving to DB failed");
+            }
         }
     }
 
