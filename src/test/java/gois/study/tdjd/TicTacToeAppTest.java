@@ -136,4 +136,14 @@ public class TicTacToeAppTest {
         ticTacToeApp.play(move.getX(), move.getY());
     }
 
+    @Test
+    public void whenPlayInvokedMultipleTimesThenTurnIncreases() {
+        TicTacToe move1 = new TicTacToe(1, 1, 1, 'X');
+        ticTacToeApp.play(move1.getX(), move1.getY());
+        verify(ticTacToeApp.getTicTacToeBusiness(), times(1)).saveMove(move1);
+        TicTacToe move2 = new TicTacToe(2, 1, 2, 'O');
+        ticTacToeApp.play(move2.getX(), move2.getY());
+        verify(ticTacToeApp.getTicTacToeBusiness(), times(1)).saveMove(move2);
+    }
+
 }
