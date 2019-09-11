@@ -52,4 +52,10 @@ public class TicTacToeBusinessTest {
     public void whenDropThenReturnTrue() {
         assertTrue(business.drop());
     }
+
+    @Test
+    public void givenExceptionWhenDropThenReturnFalse() {
+        doThrow(new RuntimeException("Bla")).when(business).drop();
+        assertFalse(business.drop());
+    }
 }
