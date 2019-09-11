@@ -46,4 +46,10 @@ public class TicTacToeBusinessTest {
         doThrow(new RuntimeException("Bla")).when(repository).save(any(TicTacToe.class));
         assertFalse(business.saveMove(bean));
     }
+
+    @Test
+    public void whenDropThenInvokeRepositoryDeleteAll() {
+        business.drop();
+        verify(repository).deleteAll();
+    }
 }
