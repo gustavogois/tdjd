@@ -47,4 +47,9 @@ public class TicTacToeBusinessTest {
         business.drop();
         verify(repository).deleteAll();
     }
+
+    @Test
+    public void whenDropThenReturnTrue() {
+        assertTrue(business.drop());
+    }
 }
