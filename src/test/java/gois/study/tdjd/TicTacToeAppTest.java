@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TicTacToeAppTest {
 
@@ -109,6 +110,11 @@ public class TicTacToeAppTest {
         ticTacToeApp.play(3, 3);
         String actual = ticTacToeApp.play(3, 2);
         assertEquals("The result is draw", actual);
+    }
+
+    @Test
+    public void whenInstantiatedThenSetBusiness() {
+        assertNotNull(ticTacToeApp.getTicTacToeBusiness());
     }
 
 }
