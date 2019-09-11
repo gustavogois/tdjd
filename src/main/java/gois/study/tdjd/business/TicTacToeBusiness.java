@@ -2,7 +2,9 @@ package gois.study.tdjd.business;
 
 import gois.study.tdjd.model.TicTacToe;
 import gois.study.tdjd.repository.TicTacToeRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TicTacToeBusiness {
 
     private TicTacToeRepository repository;

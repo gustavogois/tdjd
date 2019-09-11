@@ -2,6 +2,9 @@ package gois.study.tdjd.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
+
+@Entity
 public class TicTacToe {
 
     @Id
