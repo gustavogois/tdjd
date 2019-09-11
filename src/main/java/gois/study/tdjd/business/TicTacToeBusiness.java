@@ -19,4 +19,8 @@ public class TicTacToeBusiness {
             return false;
         }
     }
+
+    public void drop() {
+        repository.deleteAll();
+    }
 }
