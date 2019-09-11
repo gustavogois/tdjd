@@ -20,7 +20,8 @@ public class TicTacToeBusiness {
         }
     }
 
-    public void drop() {
+    public boolean drop() {
         repository.deleteAll();
+        return true;
     }
 }
