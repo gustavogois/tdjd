@@ -21,7 +21,11 @@ public class TicTacToeBusiness {
     }
 
     public boolean drop() {
-        repository.deleteAll();
-        return true;
+        try {
+            repository.deleteAll();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
