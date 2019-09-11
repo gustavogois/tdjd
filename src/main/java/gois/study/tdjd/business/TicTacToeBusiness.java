@@ -12,7 +12,11 @@ public class TicTacToeBusiness {
     }
 
     public boolean saveMove(TicTacToe bean) {
-        repository.save(bean);
-        return true;
+        try {
+            repository.save(bean);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
