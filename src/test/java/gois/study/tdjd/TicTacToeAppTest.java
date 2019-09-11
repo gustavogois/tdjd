@@ -128,4 +128,12 @@ public class TicTacToeAppTest {
         verify(ticTacToeApp.getTicTacToeBusiness()).saveMove(move);
     }
 
+    @Test
+    public void whenPlayAndSaveReturnsFalseThenThrowException() {
+        doReturn(false).when(ticTacToeApp.getTicTacToeBusiness()).saveMove(any(TicTacToe.class));
+        TicTacToe move = new TicTacToe(1, 1, 3, 'X');
+        exception.expect(RuntimeException.class);
+        ticTacToeApp.play(move.getX(), move.getY());
+    }
+
 }
