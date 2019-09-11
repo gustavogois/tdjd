@@ -9,8 +9,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 public class TicTacToeAppTest {
 
@@ -22,6 +21,7 @@ public class TicTacToeAppTest {
     @Before
     public final void before() {
         ticTacToeApp = new TicTacToeApp(spy(TicTacToeBusiness.class));
+        doReturn(true).when(ticTacToeApp.getTicTacToeBusiness()).saveMove(any(TicTacToe.class));
     }
 
     @Test
