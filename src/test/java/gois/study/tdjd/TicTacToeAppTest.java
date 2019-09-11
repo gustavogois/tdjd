@@ -1,5 +1,6 @@
 package gois.study.tdjd;
 
+import gois.study.tdjd.business.TicTacToeBusiness;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -7,6 +8,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.spy;
 
 public class TicTacToeAppTest {
 
@@ -17,7 +19,7 @@ public class TicTacToeAppTest {
 
     @Before
     public final void before() {
-        ticTacToeApp = new TicTacToeApp();
+        ticTacToeApp = new TicTacToeApp(spy(TicTacToeBusiness.class));
     }
 
     @Test

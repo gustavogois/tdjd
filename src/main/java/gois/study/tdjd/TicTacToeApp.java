@@ -1,5 +1,7 @@
 package gois.study.tdjd;
 
+import gois.study.tdjd.business.TicTacToeBusiness;
+
 public class TicTacToeApp {
 
     public static final char BLANK = '\0';
@@ -8,12 +10,17 @@ public class TicTacToeApp {
     private static final int SIZE = 3;
 
     private char lastPlayer = BLANK;
+    private TicTacToeBusiness business;
 
     private Character[][] board = {
             {BLANK, BLANK, BLANK},
             {BLANK, BLANK, BLANK},
             {BLANK, BLANK, BLANK}
     };
+
+    public TicTacToeApp(TicTacToeBusiness business) {
+        this.business = business;
+    }
 
     public String play(int x, int y) {
 
@@ -74,5 +81,9 @@ public class TicTacToeApp {
 
     public char nextPlayer() {
         return lastPlayer == PLAYER_X ? PLAYER_O : PLAYER_X;
+    }
+
+    public TicTacToeBusiness getTicTacToeBusiness() {
+        return business;
     }
 }

@@ -7,6 +7,9 @@ public class TicTacToeBusiness {
 
     private TicTacToeRepository repository;
 
+    public TicTacToeBusiness() {
+    }
+
     public TicTacToeBusiness(TicTacToeRepository repository) {
         this.repository = repository;
     }
