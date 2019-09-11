@@ -55,7 +55,7 @@ public class TicTacToeBusinessTest {
 
     @Test
     public void givenExceptionWhenDropThenReturnFalse() {
-        doThrow(new RuntimeException("Bla")).when(business).drop();
+        doThrow(new RuntimeException("Bla")).when(repository).deleteAll();
         assertFalse(business.drop());
     }
 }
